@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoescola São Lourenço - Protótipo Público</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Autoescola São Lourenço - Protótipo Privado</h1>
+        <button id="logoutBtn" class="hidden">Sair</button>
+    </header>
+
+    <main>
+        <!-- Tela de Login -->
+        <section id="loginSection">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Digite seu email" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+
+                <button type="submit">Entrar</button>
+                <p id="loginError" style="color: red; display: none;">Email ou senha incorretos.</p>
+            </form>
+        </section>
+
+        <!-- Página Inicial -->
+        <section id="homeSection" class="hidden">
+            <h2>Página Inicial - Trajeto do Exame Prático</h2>
+            <div id="map" style="height: 400px;"></div>
+            <p><strong>Instruções do Trajeto:</strong> Siga o caminho marcado (linha azul). Passe pelos pontos com dicas específicas para o exame.</p>
+            <button id="simulatorBtn">Iniciar Simulador de Exame</button>
+        </section>
+
+        <!-- Simulador -->
+        <section id="simulatorSection" class="hidden">
+            <h2>Simulador de Exame de Direção (Visão Realista)</h2>
+            <div id="simulatorControls">
+                <button id="fullscreenBtn">Tela Cheia</button>
+                <button id="toggleInstructionsBtn">Mostrar/Ocultar Comandos</button>
+		<button id="resetSimulatorBtn">Resetar Simulador</button>
+            </div>
+	    <div id="miniMapContainer">
+    		<div id="miniMap"></div>
+	    </div>
+            <div id="simulatorInstructions">
+                <strong>Instruções e Controles:</strong><br>
+                - Z/X/C: Pedais (Z=acelerador, X=freio, C=embreagem)<br>
+                - Setas ←/→: Girar volante<br>
+                - Setas ↑/↓: Setas do carro (↑=direita, ↓=esquerda)<br>
+                - F: Freio de mão (ligar/desligar)<br>
+                - R/1/2/3/4: Marchas (R=ré, 1-4=marchas)<br>
+                - ESC: Fechar simulador<br>
+                <strong>Exame:</strong> Siga os passos sequenciais no status.
+            </div>
+            <canvas id="simulatorCanvas" width="1000" height="600"></canvas>
+            <p id="simulatorStatus">Status: Preparando... Coloque o cinto e ligue o freio de mão!</p>
+            <button id="backToHomeBtn">Voltar à Página Inicial</button>
+        </section>
+    </main>
+
+    <script src="leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
