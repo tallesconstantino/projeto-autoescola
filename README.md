@@ -1,6 +1,6 @@
 # projeto-autoescola
 
-# Para acessar o site:
+Para acessar o site:
 
-# Email: tallesconstantino7@gmail.com
-# Senha: 21032006
+Email: tallesconstantino7@gmail.com
+Senha: 21032006
